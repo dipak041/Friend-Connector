@@ -1,0 +1,755 @@
+/* =========================================
+   1. GLOBAL SETTINGS & RESET
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    color: #1c1e21;
+}
+
+a {
+    text-decoration: none;
+    color: #1877f2;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   2. INDEX / LANDING PAGE
+   ========================================= */
+.index-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1877f2, #0e4c9e);
+    color: white;
+}
+
+.landing-container {
+    text-align: center;
+    max-width: 600px;
+    padding: 50px 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.main-title {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 35px;
+    line-height: 1.6;
+    color: #e4e6eb;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: white;
+    color: #1877f2;
+    padding: 14px 35px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.btn-primary:hover {
+    background-color: #f0f2f5;
+    transform: translateY(-3px);
+    text-decoration: none;
+}
+
+/* =========================================
+   3. LOGIN & REGISTER PAGE (WITH MONKEY)
+   ========================================= */
+.login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f2f5;
+}
+
+.login-container {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    width: 380px;
+    text-align: center;
+}
+
+.monkey-icon {
+    font-size: 55px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.monkey-icon:hover {
+    transform: scale(1.1);
+}
+
+.login-container h2 {
+    margin-bottom: 25px;
+    color: #1877f2;
+    font-size: 1.5rem;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #606770;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccd0d5;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #1877f2;
+    box-shadow: 0 0 5px rgba(24, 119, 242, 0.3);
+}
+
+/* Password Box & Toggle */
+.password-group .pass-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-group .pass-box input {
+    padding-right: 45px;
+}
+
+#togglePassword {
+    position: absolute;
+    right: 15px;
+    cursor: pointer;
+    font-size: 22px;
+    user-select: none;
+    transition: transform 0.2s;
+}
+
+#togglePassword:hover {
+    transform: scale(1.1);
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #1877f2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover { 
+    background-color: #166fe5; 
+}
+
+/* =========================================
+   4. NAVIGATION BAR
+   ========================================= */
+.navbar {
+    background-color: #ffffff;
+    padding: 12px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar .logo { 
+    color: #1877f2; 
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.nav-links a { 
+    color: #606770; 
+    margin-right: 20px; 
+    font-weight: 600; 
+    font-size: 1.05rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #1877f2;
+    text-decoration: none;
+}
+
+.btn-outline { 
+    padding: 8px 20px; 
+    border: 2px solid #1877f2; 
+    color: #1877f2; 
+    background: transparent; 
+    cursor: pointer; 
+    border-radius: 20px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-outline:hover {
+    background: #1877f2;
+    color: white;
+}
+
+/* =========================================
+   5. MAIN FEED PAGE (HOME)
+   ========================================= */
+.feed-container {
+    display: flex;
+    max-width: 1100px;
+    margin: 25px auto;
+    gap: 25px;
+    padding: 0 15px;
+}
+
+/* Sidebar (Friends List) */
+.sidebar {
+    width: 280px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    height: fit-content;
+    position: sticky;
+    top: 80px;
+}
+
+.sidebar h3 {
+    color: #606770;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #e4e6eb;
+    padding-bottom: 10px;
+}
+
+.friend-list { 
+    list-style: none; 
+}
+
+.friend-list li { 
+    padding: 10px 5px;
+    margin-bottom: 5px; 
+    display: flex; 
+    align-items: center; 
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-weight: 500;
+}
+
+.friend-list li:hover {
+    background-color: #f0f2f5;
+}
+
+.status { 
+    width: 12px; 
+    height: 12px; 
+    border-radius: 50%; 
+    margin-right: 12px; 
+    border: 2px solid white;
+    box-shadow: 0 0 0 1px #ddd;
+}
+
+.online { background-color: #31a24c; }
+.offline { background-color: #bcc0c4; }
+
+/* Main Feed Area */
+.feed-main { 
+    flex: 1; 
+}
+
+/* Create Post Box */
+.create-post {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    margin-bottom: 25px;
+}
+
+.create-post textarea {
+    width: 100%;
+    height: 90px;
+    border: none;
+    resize: none;
+    font-size: 1.1rem;
+    outline: none;
+    background: #f0f2f5;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* Post Card */
+.post-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+    transition: transform 0.2s;
+}
+
+.post-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.post-header { 
+    margin-bottom: 15px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f0f2f5;
+    padding-bottom: 10px;
+}
+
+.post-header h4 { 
+    color: #1c1e21; 
+    font-size: 1.1rem;
+}
+
+.post-header small {
+    color: #65676b;
+    font-size: 0.85rem;
+}
+
+.post-body p {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: #1c1e21;
+}
+
+/* =========================================
+   6. CHAT PAGE & MESSAGING
+   ========================================= */
+.chat-container {
+    display: flex;
+    max-width: 1100px;
+    height: 80vh;
+    margin: 25px auto;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+/* Chat Sidebar */
+.chat-sidebar {
+    width: 320px;
+    border-right: 1px solid #e4e6eb;
+    background: #ffffff;
+}
+
+.chat-sidebar h3 {
+    padding: 20px;
+    border-bottom: 1px solid #e4e6eb;
+    color: #1c1e21;
+}
+
+.chat-list {
+    list-style: none;
+    overflow-y: auto;
+    height: calc(100% - 65px);
+}
+
+.chat-list li {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid #f0f2f5;
+    transition: background 0.2s;
+}
+
+.chat-list li:hover, .active-chat {
+    background: #eaf3ff;
+}
+
+.chat-avatar {
+    width: 45px;
+    height: 45px;
+    background: #1877f2;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-right: 15px;
+}
+
+.chat-info h4 { margin-bottom: 3px; font-size: 1rem; color: #1c1e21;}
+.chat-info small { color: #65676b; }
+
+/* Main Chat Area */
+.chat-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
+    padding: 15px 25px;
+    border-bottom: 1px solid #e4e6eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+}
+
+.chat-header h3 {
+    color: #1c1e21;
+}
+
+.btn-call {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    background: #e4e6eb;
+    cursor: pointer;
+    margin-left: 10px;
+    font-weight: bold;
+    color: #1c1e21;
+    transition: background 0.3s;
+}
+
+.btn-call:hover { background: #d8dadf; }
+
+/* Messages Box */
+.messages-area {
+    flex: 1;
+    padding: 25px;
+    overflow-y: auto;
+    background: #f0f2f5;
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    max-width: 65%;
+    padding: 12px 18px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    font-size: 1rem;
+    position: relative;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.message.received {
+    background: #ffffff;
+    color: #1c1e21;
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+}
+
+.message.sent {
+    background: #1877f2;
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+}
+
+/* Chat Input Box */
+.message-input {
+    padding: 15px 25px;
+    background: #ffffff;
+    border-top: 1px solid #e4e6eb;
+    display: flex;
+    align-items: center;
+}
+
+.message-input input {
+    flex: 1;
+    padding: 14px 20px;
+    border: 1px solid #ccd0d5;
+    border-radius: 25px;
+    outline: none;
+    font-size: 1rem;
+    background: #f0f2f5;
+    transition: border 0.3s;
+}
+
+.message-input input:focus {
+    border-color: #1877f2;
+}
+
+.btn-send {
+    background: #1877f2;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    margin-left: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.btn-send:hover {
+    background: #166fe5;
+}
+
+/* =========================================
+   7. VIDEO CALL MODAL
+   ========================================= */
+.call-modal {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.call-content {
+    background: #242526;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    width: 90%;
+    max-width: 900px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.video-streams {
+    display: flex;
+    justify-content: space-around;
+    margin: 25px 0;
+    gap: 20px;
+}
+
+.remote-video, .local-video {
+    width: 48%;
+    height: 350px;
+    background: #000;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    border: 2px solid #3a3b3c;
+}
+
+.btn-end {
+    background: #e41e3f;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 4px 15px rgba(228, 30, 63, 0.4);
+}
+
+.btn-end:hover {
+    background: #b91530;
+    transform: scale(1.05);
+}
+/* =========================================
+   8. PROFILE PAGE DESIGN
+   ========================================= */
+.profile-container {
+    max-width: 1000px;
+    margin: 0 auto 30px;
+    background: #fff;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.profile-header {
+    position: relative;
+    border-radius: 0 0 12px 12px;
+}
+
+.cover-photo {
+    height: 350px;
+    background-color: #ccd0d5;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 70%, rgba(0,0,0,0.5));
+    background-size: cover;
+    background-position: center;
+    border-radius: 0 0 12px 12px;
+    position: relative;
+}
+
+.btn-edit-cover {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    background: white;
+    color: #1c1e21;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-edit-cover:hover {
+    background: #f0f2f5;
+}
+
+.profile-info-bar {
+    display: flex;
+    align-items: flex-end;
+    padding: 0 30px 20px;
+    margin-top: -50px;
+    position: relative;
+}
+
+.profile-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid white;
+    background: #1877f2;
+    color: white;
+    font-size: 4rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+
+.profile-name-sec {
+    margin-left: 20px;
+    padding-bottom: 10px;
+    z-index: 10;
+}
+
+.profile-name-sec h2 {
+    font-size: 2rem;
+    color: #1c1e21;
+    margin-bottom: 5px;
+}
+
+.profile-name-sec p {
+    color: #65676b;
+    font-weight: bold;
+}
+
+.profile-content {
+    max-width: 680px;
+    margin: 20px auto;
+    padding-bottom: 40px;
+}
+
+/* =========================================
+   9. POST ACTIONS (LIKE, COMMENT, SHARE)
+   ========================================= */
+.post-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.action-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    color: #606770;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.2s;
+}
+
+.action-btn:hover {
+    background: #f0f2f5;
+}
+
+.action-btn.liked {
+    color: #1877f2;
+}
+/* =========================================
+   10. EDIT & DELETE BUTTON STYLING
+   ========================================= */
+.post-options {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-edit-del {
+    background: transparent;
+    border: none;
+    color: #65676b;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+}
+
+.btn-edit-del:hover {
+    background: #e4e6eb;
+    color: #1c1e21;
+}
+
+/* Comment section ko Delete/Edit button ko size ali sano */
+.comment-options .btn-edit-del {
+    font-size: 0.75rem;
+    padding: 2px 5px;
+}

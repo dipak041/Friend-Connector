@@ -6,6 +6,7 @@ globalThis.crypto??=webcrypto;
 globalThis.localStorage={getItem:k=>saved.get(k)||null,setItem:(k,v)=>saved.set(k,v)};
 globalThis.sessionStorage={getItem:()=>null};
 globalThis.window={addEventListener:()=>{}};
+globalThis.location={hostname:'localhost',search:'?backend=local'};
 const store=await import('../js/store.js');
 test('demo writes persist, watchers update, recipient queries filter, unsubscribe stops updates',async()=>{
  let rows=[],count=0;const stop=store.watch('messages',value=>{rows=value;count++},[['members','array-contains','a']]);

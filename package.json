@@ -1,1 +1,11 @@
-{"name":"socialapp","version":"2.0.0","private":true,"type":"module","scripts":{"start":"node server.mjs","test":"node --test tests/*.test.mjs"}}
+{
+  "name": "socialapp",
+  "version": "3.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "database": "npx --yes firebase-tools@15.34.0 emulators:start --project demo-socialapp --only auth,firestore --import=.firebase-data --export-on-exit=.firebase-data"
+  }
+}

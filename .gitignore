@@ -1,0 +1,15 @@
+node_modules/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+Thumbs.db
+.firebase/
+.firebase-data/
+.emulator-cache/
+service-account*.json
+*-firebase-adminsdk-*.json
+coverage/
+test-results/
+playwright-report/
